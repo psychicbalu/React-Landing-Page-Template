@@ -141,7 +141,7 @@ hr {
   background-color: #608dfd;
 }
 .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 .section-title h2 {
   position: relative;
@@ -208,20 +208,25 @@ a:focus,
   display: table;
   width: 100%;
   padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
+  background: url(../img/groupimg.png) center center no-repeat;
   background-color: #e5e5e5;
+  /* background-position: 50% 35%; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.5);
+}
+.razorpay-payment-button{
+  transform: scale(1.2);
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
   color: #fff;
-  font-size: 82px;
+  font-size: calc(2.5vh + 2.5vw);
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
@@ -233,8 +238,8 @@ a:focus,
 }
 .intro p {
   color: #fff;
-  font-size: 22px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 400;
   line-height: 30px;
   margin: 0 auto;
   margin-bottom: 60px;
@@ -248,17 +253,35 @@ header .intro-text {
 #features {
   background: #f6f6f6;
 }
+#features .container{
+  display: flex;
+  flex-direction: column;
+}
+#features .row{
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
 #features i.fa {
   font-size: 38px;
   margin-bottom: 20px;
   transition: all 0.5s;
   color: #fff;
-  width: 100px;
-  height: 100px;
-  padding: 30px 0;
+  width: calc(3.5vh + 3.5vw);
+  height: calc(3.5vh + 3.5vw);
+  font-size: calc(1.5vh + 1.5vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: #5ca9fb;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+#features i.fa:hover {
+  color: #fff;
+  background: #154a83;
 }
 /* About Section */
 #about {

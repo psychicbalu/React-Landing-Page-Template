@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export const Header = (props) => {
+  useEffect(() => {
+    const rzpPaymentForm = document.getElementById("rzp_payment_form");
+    
+    if (!rzpPaymentForm.hasChildNodes()) {
+
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+      script.async = true;
+      script.dataset.payment_button_id = "pl_PNYbFFjRCWzWGF";
+      rzpPaymentForm.appendChild(script);
+
+    }
+
+  });
   return (
     <header id="header">
       <div className="intro">
@@ -13,12 +27,7 @@ export const Header = (props) => {
                   <span></span>
                 </h1>
                 <p>{props.data ? props.data.paragraph : "Loading"}</p>
-                <a
-                  href="#features"
-                  className="btn btn-custom btn-lg page-scroll"
-                >
-                  Learn More
-                </a>{" "}
+                <form id="rzp_payment_form"></form>
               </div>
             </div>
           </div>
